@@ -1,3 +1,4 @@
+import 'package:bikel_bela/screens/product_detail_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -10,9 +11,34 @@ class ProductItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final product = Provider.of<Product>(context);
     return ClipRRect(
-      borderRadius: BorderRadius.circular(25),
-      child: GridTile(
-        child: Image.network(product.imageUrl),
+      borderRadius: BorderRadius.circular(15),
+      child: InkWell(
+        onTap: () {
+          Navigator.of(context).pushNamed(
+            ProductDetailScreen.routeName,
+            arguments: product.id,
+          );
+        },
+        child: GridTile(
+          child: Image.network(
+            product.imageUrl,
+          ),
+          footer: GridTileBar(
+            backgroundColor: Colors.black54,
+            leading: IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.favorite_outline,
+                color: Colors.orange,
+              ),
+            ),
+            title: Text(product.title),
+            trailing: IconButton(
+              icon: const Icon(Icons.shopping_cart),
+              onPressed: () {},
+            ),
+          ),
+        ),
       ),
     );
   }
