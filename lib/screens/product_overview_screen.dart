@@ -1,5 +1,8 @@
+import 'package:bikel_bela/providers/cart.dart';
+import 'package:bikel_bela/screens/cart_screen.dart';
 import 'package:bikel_bela/widgets/badge.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../widgets/products_grid.dart';
 
 enum FilterOption { showFav, showAll }
@@ -44,15 +47,19 @@ class _ProductOverviewScreenState extends State<ProductOverviewScreen> {
               ];
             },
           ),
-          Badge(
-            child: IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.shopping_cart,
+          Consumer<Cart>(
+            builder: (context, value, child) => Badge(
+              child: IconButton(
+                onPressed: () {
+                  Navigator.of(context).pushNamed(CartScreen.route);
+                },
+                icon: const Icon(
+                  Icons.shopping_cart,
+                ),
               ),
+              value: value.itemCount().toString(),
+              color: Colors.white,
             ),
-            value: '10',
-            color: Colors.white,
           ),
         ],
       ),
