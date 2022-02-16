@@ -1,3 +1,4 @@
+import 'package:bikel_bela/widgets/badge.dart';
 import 'package:flutter/material.dart';
 import '../widgets/products_grid.dart';
 
@@ -20,6 +21,7 @@ class _ProductOverviewScreenState extends State<ProductOverviewScreen> {
         title: const Text('My Shop'),
         actions: [
           PopupMenuButton(
+            icon: Icon(Icons.settings),
             onSelected: (FilterOption value) {
               setState(() {
                 if (value == FilterOption.showFav) {
@@ -41,7 +43,17 @@ class _ProductOverviewScreenState extends State<ProductOverviewScreen> {
                 ),
               ];
             },
-          )
+          ),
+          Badge(
+            child: IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.shopping_cart,
+              ),
+            ),
+            value: '10',
+            color: Colors.white,
+          ),
         ],
       ),
       body: Padding(

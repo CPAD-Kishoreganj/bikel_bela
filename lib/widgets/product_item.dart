@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 import '../models/product.dart';
 
 class ProductItem extends StatelessWidget {
-  ProductItem({Key? key}) : super(key: key);
+  const ProductItem({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,13 +31,13 @@ class ProductItem extends StatelessWidget {
                 product.toggleFavorite();
               },
               icon: product.isFavorite
-                  ? const Icon(
+                  ? Icon(
                       Icons.favorite,
-                      color: Colors.orange,
+                      color: Theme.of(context).primaryColor,
                     )
-                  : const Icon(
+                  : Icon(
                       Icons.favorite_outline,
-                      color: Colors.orange,
+                      color: Theme.of(context).primaryColor,
                     ),
             ),
             title: Text(product.title),
