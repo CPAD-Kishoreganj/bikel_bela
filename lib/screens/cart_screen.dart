@@ -1,6 +1,7 @@
-import 'package:bikel_bela/providers/cart.dart';
+import 'package:bikel_bela/providers/cart.dart' show Cart;
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:bikel_bela/widgets/cart_item.dart';
 
 class CartScreen extends StatelessWidget {
   static const route = 'cart-screen';
@@ -21,8 +22,11 @@ class CartScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("ToTal"),
-                  Spacer(),
+                  const Text(
+                    "Total",
+                    style: TextStyle(fontSize: 24),
+                  ),
+                  const Spacer(),
                   Chip(
                     backgroundColor: Colors.amber,
                     label: Text(
@@ -31,12 +35,23 @@ class CartScreen extends StatelessWidget {
                   ),
                   TextButton(
                     onPressed: () {},
-                    child: Text(
+                    child: const Text(
                       'Order Now',
                       style: TextStyle(color: Colors.red),
                     ),
                   ),
                 ],
+              ),
+            ),
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: cart.items.length,
+              itemBuilder: (context, index) => CartItem(
+                id: cart.items.values.toList()[index].id,
+                title: cart.items.values.toList()[index].title,
+                price: cart.items.values.toList()[index].price,
+                quantity: cart.items.values.toList()[index].quantity,
               ),
             ),
           ),
