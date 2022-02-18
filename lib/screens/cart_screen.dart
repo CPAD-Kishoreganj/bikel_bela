@@ -11,7 +11,7 @@ class CartScreen extends StatelessWidget {
     final cart = Provider.of<Cart>(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text('Your cart'),
+        title: const Text('Your cart'),
       ),
       body: Column(
         children: [
@@ -49,6 +49,7 @@ class CartScreen extends StatelessWidget {
               itemCount: cart.items.length,
               itemBuilder: (context, index) => CartItem(
                 id: cart.items.values.toList()[index].id,
+                productId: cart.items.keys.toList()[index],
                 title: cart.items.values.toList()[index].title,
                 price: cart.items.values.toList()[index].price,
                 quantity: cart.items.values.toList()[index].quantity,
