@@ -24,10 +24,10 @@ class CartItem extends StatelessWidget {
     return Dismissible(
       key: ValueKey(id),
       background: Container(
-        margin: EdgeInsets.all(8),
-        padding: EdgeInsets.all(8),
+        margin: const EdgeInsets.all(8),
+        padding: const EdgeInsets.all(8),
         color: Colors.red,
-        child: Icon(
+        child: const Icon(
           Icons.delete,
           size: 40,
           color: Colors.white,

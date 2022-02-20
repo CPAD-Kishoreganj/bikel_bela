@@ -1,4 +1,5 @@
 import 'package:bikel_bela/providers/cart.dart';
+import 'package:bikel_bela/providers/orders.dart';
 import 'package:bikel_bela/providers/products.dart';
 import 'package:bikel_bela/screens/cart_screen.dart';
 import 'package:bikel_bela/screens/product_detail_screen.dart';
@@ -23,6 +24,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => Cart(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => Orders(),
         ),
       ],
       child: MaterialApp(
