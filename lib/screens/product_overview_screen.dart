@@ -1,6 +1,7 @@
 import 'package:bikel_bela/providers/cart.dart';
 import 'package:bikel_bela/screens/cart_screen.dart';
 import 'package:bikel_bela/widgets/badge.dart';
+import 'package:bikel_bela/widgets/my_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../widgets/products_grid.dart';
@@ -63,6 +64,7 @@ class _ProductOverviewScreenState extends State<ProductOverviewScreen> {
           ),
         ],
       ),
+      drawer: MyDrawer(),
       body: Padding(
         padding: const EdgeInsets.all(8),
         child: ProductsGrid(_showOnlyFavorites),
