@@ -1,3 +1,4 @@
+import 'package:bikel_bela/models/product.dart';
 import 'package:flutter/foundation.dart';
 
 class CartItem {
@@ -54,6 +55,26 @@ class Cart with ChangeNotifier {
           quantity: 1,
         ),
       );
+    }
+    notifyListeners();
+  }
+
+  void removeSingleItem(String productId) {
+    if (!_items.containsKey(productId)) {
+      return;
+    }
+    if (_items.length > 1) {
+      _items.update(
+        productId,
+        (existingProductId) => CartItem(
+          id: existingProductId.id,
+          title: existingProductId.title,
+          price: existingProductId.price,
+          quantity: existingProductId.quantity - 1,
+        ),
+      );
+    } else {
+      _items.remove(productId);
     }
     notifyListeners();
   }
