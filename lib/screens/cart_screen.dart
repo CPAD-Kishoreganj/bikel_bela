@@ -1,5 +1,6 @@
 import 'package:bikel_bela/providers/cart.dart' show Cart;
 import 'package:bikel_bela/providers/orders.dart';
+import 'package:bikel_bela/widgets/my_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:bikel_bela/widgets/cart_item.dart';
@@ -12,8 +13,17 @@ class CartScreen extends StatelessWidget {
     final cart = Provider.of<Cart>(context);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Your cart'),
+        title: Row(
+          children: const [
+            CircleAvatar(
+              backgroundColor: Colors.red,
+            ),
+            SizedBox(width: 8),
+            Text("Your cart"),
+          ],
+        ),
       ),
+      drawer: MyDrawer(),
       body: Column(
         children: [
           Card(
