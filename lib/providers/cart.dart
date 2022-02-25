@@ -1,4 +1,3 @@
-import 'package:bikel_bela/models/product.dart';
 import 'package:flutter/foundation.dart';
 
 class CartItem {
