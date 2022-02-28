@@ -4,6 +4,7 @@ import 'package:bikel_bela/providers/products.dart';
 import 'package:bikel_bela/screens/cart_screen.dart';
 import 'package:bikel_bela/screens/order_screen.dart';
 import 'package:bikel_bela/screens/product_detail_screen.dart';
+import 'package:bikel_bela/screens/user_product_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -41,6 +42,7 @@ class MyApp extends StatelessWidget {
           ProductDetailScreen.routeName: (context) => ProductDetailScreen(),
           CartScreen.route: (context) => CartScreen(),
           OrderScreen.routName: (context) => OrderScreen(),
+          UserProductScreen.route: (context) => const UserProductScreen(),
         },
       ),
     );

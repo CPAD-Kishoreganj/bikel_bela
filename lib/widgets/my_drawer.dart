@@ -1,4 +1,5 @@
 import 'package:bikel_bela/screens/order_screen.dart';
+import 'package:bikel_bela/screens/user_product_screen.dart';
 import 'package:flutter/material.dart';
 
 class MyDrawer extends StatelessWidget {
@@ -43,6 +44,24 @@ class MyDrawer extends StatelessWidget {
             ),
             onTap: () {
               Navigator.of(context).pushReplacementNamed(OrderScreen.routName);
+            },
+          ),
+          const SizedBox(height: 8),
+          ListTile(
+            tileColor: Colors.black12,
+            leading: const Icon(
+              Icons.edit,
+              size: 32,
+            ),
+            title: const Text(
+              'Products',
+              style: TextStyle(
+                fontSize: 24,
+              ),
+            ),
+            onTap: () {
+              Navigator.of(context)
+                  .pushReplacementNamed(UserProductScreen.route);
             },
           ),
         ],
