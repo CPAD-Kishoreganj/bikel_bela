@@ -2,6 +2,7 @@ import 'package:bikel_bela/providers/cart.dart';
 import 'package:bikel_bela/providers/orders.dart';
 import 'package:bikel_bela/providers/products.dart';
 import 'package:bikel_bela/screens/cart_screen.dart';
+import 'package:bikel_bela/screens/edit_user_products_screen.dart';
 import 'package:bikel_bela/screens/order_screen.dart';
 import 'package:bikel_bela/screens/product_detail_screen.dart';
 import 'package:bikel_bela/screens/user_product_screen.dart';
@@ -43,6 +44,7 @@ class MyApp extends StatelessWidget {
           CartScreen.route: (context) => CartScreen(),
           OrderScreen.routName: (context) => OrderScreen(),
           UserProductScreen.route: (context) => const UserProductScreen(),
+          EditUserProductsScreen.route: (context) => EditUserProductsScreen()
         },
       ),
     );

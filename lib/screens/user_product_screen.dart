@@ -1,8 +1,10 @@
 import 'package:bikel_bela/providers/products.dart';
+import 'package:bikel_bela/widgets/my_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../widgets/user_product_item.dart';
+import 'edit_user_products_screen.dart';
 
 class UserProductScreen extends StatelessWidget {
   static const route = 'user-product-screen';
@@ -16,11 +18,14 @@ class UserProductScreen extends StatelessWidget {
         title: Text('User products'),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pushNamed(EditUserProductsScreen.route);
+            },
             icon: Icon(Icons.add),
           ),
         ],
       ),
+      drawer: MyDrawer(),
       body: ListView.separated(
           itemBuilder: (context, index) => UserProductItem(
                 productData.items[index].title,

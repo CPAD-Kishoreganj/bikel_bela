@@ -60,8 +60,9 @@ class MyDrawer extends StatelessWidget {
               ),
             ),
             onTap: () {
-              Navigator.of(context)
-                  .pushReplacementNamed(UserProductScreen.route);
+              Navigator.of(context).pushReplacementNamed(
+                UserProductScreen.route,
+              );
             },
           ),
         ],
