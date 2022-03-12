@@ -9,6 +9,7 @@ import '../widgets/products_grid.dart';
 enum FilterOption { showFav, showAll }
 
 class ProductOverviewScreen extends StatefulWidget {
+  static const route = 'product-overview-screen';
   ProductOverviewScreen({Key? key}) : super(key: key);
 
   @override
