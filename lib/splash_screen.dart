@@ -1,3 +1,4 @@
+import 'package:bikel_bela/on_boarding_screen.dart';
 import 'package:bikel_bela/screens/product_overview_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   void navigateToHome() async {
     await Future.delayed(const Duration(milliseconds: 2000));
-    Navigator.pushReplacementNamed(context, ProductOverviewScreen.route);
+    Navigator.pushReplacementNamed(context, OnBoardingScreen.route);
   }
 
   @override

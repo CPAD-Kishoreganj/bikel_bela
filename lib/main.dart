@@ -1,3 +1,4 @@
+import 'package:bikel_bela/on_boarding_screen.dart';
 import 'package:bikel_bela/providers/cart.dart';
 import 'package:bikel_bela/providers/orders.dart';
 import 'package:bikel_bela/providers/products.dart';
@@ -40,13 +41,16 @@ class MyApp extends StatelessWidget {
         ),
         initialRoute: '/',
         routes: {
-          '/': (context) => SplashScreen(),
-          ProductOverviewScreen.route: (context) => ProductOverviewScreen(),
+          '/': (context) => const SplashScreen(),
+          OnBoardingScreen.route: (context) => OnBoardingScreen(),
+          ProductOverviewScreen.route: (context) =>
+              const ProductOverviewScreen(),
           ProductDetailScreen.routeName: (context) => ProductDetailScreen(),
           CartScreen.route: (context) => CartScreen(),
           OrderScreen.routName: (context) => OrderScreen(),
           UserProductScreen.route: (context) => const UserProductScreen(),
-          EditUserProductsScreen.route: (context) => EditUserProductsScreen()
+          EditUserProductsScreen.route: (context) =>
+              const EditUserProductsScreen()
         },
       ),
     );
