@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
         initialRoute: '/',
         routes: {
           '/': (context) => const SplashScreen(),
-          OnBoardingScreen.route: (context) => OnBoardingScreen(),
+          OnBoardingScreen.route: (context) => const OnBoardingScreen(),
           ProductOverviewScreen.route: (context) =>
               const ProductOverviewScreen(),
           ProductDetailScreen.routeName: (context) => ProductDetailScreen(),
